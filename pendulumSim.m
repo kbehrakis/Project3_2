@@ -9,11 +9,10 @@ function res = pendulumSim()
     % Call ode45
     [t, result] = ode45(@movePendulum, [0, 50], [startAngle, startOmega]);
     result1 = result(:,1);
-    result2 = result(:,2);
 
     % Convert from circular to cartesian
     x = length*sin(result1);
-    y = length*cos(result2);
+    y = -length*cos(result1);
     
     % Plot the points
     hold on
